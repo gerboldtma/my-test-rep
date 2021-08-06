@@ -41,16 +41,6 @@ module.exports = function (config) {
     browserSocketTimeout: 60000,
     logLevel: config.LOG_DEBUG,
     autoWatch: false,
-    customLaunchers: {
-      'FirefoxHeadless': {
-        base: 'Firefox',
-        flags: [
-          '-headless',
-          '-disable-gpu',
-          '-no-sandbox'
-        ]
-      }
-    },
     browsers: ['FirefoxHeadless'],
     singleRun: true,
     restartOnFileChange: true
