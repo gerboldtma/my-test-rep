@@ -33,20 +33,18 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
     customLaunchers: {
       'FirefoxHeadless': {
         base: 'Firefox',
         flags: [
           '-headless',
-        ],
-        prefs: {
-          'network.proxy.type': 0
-        }
+          '--no-sandbox'
+        ]
       }
     },
     browsers: ['FirefoxHeadless'],
