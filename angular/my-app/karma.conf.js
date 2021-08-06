@@ -33,23 +33,15 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: true,
-    customLaunchers: {
-      ChromeHeadless: {
-        base: 'Chrome',
-        flags: [
-          '--headless',
-          '--disable-gpu',
-          '--no-sandbox',
-          '--remote-debugging-port=9222',
-        ]
-      }
-    },
-    browsers: ['ChromeHeadless'],
+    retryLimit: 2,
+    browserDisconnectTolerance: 2,
+    captureTimeout: 60000,
+    logLevel: config.LOG_DEBUG,
+    autoWatch: false,
+    browsers: ['FirefoxHeadless'],
     singleRun: true,
     restartOnFileChange: true
   });
