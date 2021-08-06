@@ -36,7 +36,7 @@ module.exports = function (config) {
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
-    captureTimeout: 120000,
+    captureTimeout: 180000,
     browserSocketTimeout: 60000,
     logLevel: config.LOG_DEBUG,
     autoWatch: false,
@@ -44,7 +44,8 @@ module.exports = function (config) {
       'FirefoxHeadless': {
         base: 'Firefox',
         flags: [
-          '-headless',
+          '--headless',
+          '--disable-gpu',
           '--no-sandbox'
         ]
       }
