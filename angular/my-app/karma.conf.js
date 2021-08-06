@@ -39,7 +39,7 @@ module.exports = function (config) {
     captureTimeout: 120000,
     browserSocketTimeout: 60000,
     logLevel: config.LOG_DEBUG,
-    autoWatch: true,
+    autoWatch: false,
     customLaunchers: {
       'FirefoxHeadless': {
         base: 'Firefox',
